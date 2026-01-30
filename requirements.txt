@@ -1,0 +1,9 @@
+flask
+langchain
+langgraph
+langchain_groq
+langchain_core
+langchain_community
+ipykernel
+yt-dlp
+python-dotenv
