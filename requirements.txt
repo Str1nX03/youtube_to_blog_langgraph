@@ -7,3 +7,4 @@ langchain_community
 ipykernel
 yt-dlp
 python-dotenv
+ddgs
