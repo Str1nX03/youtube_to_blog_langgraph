@@ -7,7 +7,7 @@ from langgraph.graph import StateGraph, END, START
 from src.exception import CustomException
 from src.utils import get_llm
 
-class ResearchState(TypedDict):
+class AgentState(TypedDict):
 
     video_analysis: str
     search_queries: Optional[List[str]]
@@ -26,7 +26,7 @@ class ResearchAgent:
 
         try:
 
-            graph = StateGraph(ResearchState)
+            graph = StateGraph(AgentState)
 
             graph.add_node("generate_queries", self._generate_queries)
             graph.add_node("perform_research", self._perform_research)
@@ -57,7 +57,7 @@ class ResearchAgent:
         except Exception as e:
             raise CustomException(e, sys)
 
-    def _generate_queries(self, state: ResearchState):
+    def _generate_queries(self, state: AgentState):
         """Node 1: LLM generates search queries based on the video analysis."""
         try:
             video_analysis = state.get("video_analysis")
@@ -106,7 +106,7 @@ class ResearchAgent:
         except Exception as e:
             raise CustomException(e, sys)
 
-    def _perform_research(self, state: ResearchState):
+    def _perform_research(self, state: AgentState):
         """Node 2: Executes the search queries and aggregates results."""
         try:
 
@@ -127,7 +127,7 @@ class ResearchAgent:
         except Exception as e:
             raise CustomException(e, sys)
 
-    def _check_queries(self, state: ResearchState):
+    def _check_queries(self, state: AgentState):
         
         try:
             
