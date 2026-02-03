@@ -1,5 +1,4 @@
 import sys
-from src.logger import logging
 from typing import TypedDict, Optional
 from langchain_core.messages import SystemMessage, HumanMessage
 from langgraph.graph import StateGraph, END, START
@@ -94,14 +93,12 @@ class BloggerAgent:
             r_findings = state.get("research_findings")
 
             if not v_analysis or not r_findings:
-                logging.warning("Missing video analysis or research findings. Stopping generation.")
                 return "end"
             
             return "generate"
 
         except Exception as e:
-            logging.error(f"Error in router _check_context: {e}")
-            return "end"
+            raise CustomException(e, sys)
 
     def run(self, video_analysis: str, research_findings: str):
         """Entry point for the agent."""
