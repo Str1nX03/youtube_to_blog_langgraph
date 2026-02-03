@@ -1,22 +1,19 @@
 from langchain_groq.chat_models import ChatGroq
 from src.exception import CustomException
-from src.logger import logging
 import os
 import sys
+from dotenv import load_dotenv
+
+load_dotenv()
 
 def get_llm():
     
     try:
 
-        logging.info("Getting LLM")
-
         llm = ChatGroq(
             model_name = "llama-3.3-70b-versatile",
-            temperature = 0.2,
-            api_key = os.getenv("GROQ_API_KEY")
+            temperature = 0.2
         )
-
-        logging.info("LLM retrieved successfully")
 
         return llm
     

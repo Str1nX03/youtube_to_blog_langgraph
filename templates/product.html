@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tube2Blog - Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/product.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Markdown Parser -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <div class="app-layout">
+        <!-- Region 1: Thin Input Area -->
+        <header class="input-region">
+            <div class="logo-small">Tube2Blog</div>
+            <div class="input-group">
+                <input type="text" id="videoUrl" placeholder="Paste YouTube Link (e.g., https://youtube.com/watch?v=...)" />
+                <button id="generateBtn">
+                    <span id="btnText">Generate Blog</span>
+                    <span id="btnLoader" class="loader hidden"></span>
+                </button>
+            </div>
+            <div class="status" id="statusText">Ready</div>
+        </header>
+
+        <!-- Region 2: Blog Viewing Area -->
+        <main class="output-region">
+            <div id="welcomeState" class="placeholder-state">
+                <div class="icon-large">📝</div>
+                <h2>Your Blog Post Will Appear Here</h2>
+                <p>Paste a link above and let our agents Research, Analyze, and Write for you.</p>
+            </div>
+
+            <div id="resultContent" class="blog-content hidden">
+                <!-- Blog content will be injected here -->
+            </div>
+            
+            <div id="errorState" class="error-state hidden">
+                <h3>Oops! Something went wrong.</h3>
+                <p id="errorMessage"></p>
+            </div>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/product.js') }}"></script>
+</body>
+</html>

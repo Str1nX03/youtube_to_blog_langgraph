@@ -1,6 +1,6 @@
 import sys
 import json
-from typing import TypedDict, Optional, List, Any
+from typing import TypedDict, Optional, List
 from langchain_community.tools import DuckDuckGoSearchRun
 from langchain_core.messages import SystemMessage, HumanMessage
 from langgraph.graph import StateGraph, END, START

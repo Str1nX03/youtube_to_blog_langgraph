@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tube2Blog - AI Content Agent</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/landing.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">Tube2Blog AI</div>
+            <nav>
+                <a href="#features">Features</a>
+                <a href="#how-it-works">How it Works</a>
+                <a href="/product" class="btn-secondary">Try Demo</a>
+            </nav>
+        </header>
+
+        <main class="hero">
+            <div class="hero-content">
+                <h1>Turn YouTube Videos into <span class="highlight">Viral Blog Posts</span></h1>
+                <p class="subheadline">Stop transcribing manually. Our autonomous AI agents analyze videos, research the web for context, and write SEO-optimized articles in seconds.</p>
+                <div class="cta-group">
+                    <a href="/product" class="btn-primary" id="getStartedBtn">Start Creating Free</a>
+                    <span class="muted-text">No credit card required</span>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="agent-card">
+                    <div class="agent-icon">🤖</div>
+                    <div class="agent-details">
+                        <span>Agent: Analyst</span>
+                        <div class="progress-bar"><div class="fill" style="width: 100%"></div></div>
+                    </div>
+                </div>
+                <div class="agent-card">
+                    <div class="agent-icon">🔎</div>
+                    <div class="agent-details">
+                        <span>Agent: Researcher</span>
+                        <div class="progress-bar"><div class="fill" style="width: 80%"></div></div>
+                    </div>
+                </div>
+                <div class="agent-card">
+                    <div class="agent-icon">✍️</div>
+                    <div class="agent-details">
+                        <span>Agent: Blogger</span>
+                        <div class="progress-bar"><div class="fill" style="width: 40%"></div></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="{{ url_for('static', filename='js/landing.js') }}"></script>
+</body>
+</html>
